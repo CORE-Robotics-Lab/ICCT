@@ -178,10 +178,10 @@ if __name__ == "__main__":
         }
         if args.alg_type == 'sac':
             policy_name = 'DDT_SACPolicy'
-            policy_kwargs['net_arch'] = {'pi': [16, 16], 'qf': [256, 256]} # [256, 256] if a default setting in sb3 for SAC
+            policy_kwargs['net_arch'] = {'pi': [16, 16], 'qf': [256, 256]} # [256, 256] is a default setting in SB3 for SAC
         else:
             policy_name = 'DDT_TD3Policy'
-            policy_kwargs['net_arch'] = {'pi': [16, 16], 'qf': [400, 300]} # [400, 300] if a default setting in sb3 for TD3
+            policy_kwargs['net_arch'] = {'pi': [16, 16], 'qf': [400, 300]} # [400, 300] is a default setting in SB3 for TD3
 
     elif args.policy_type == 'mlp':
         if args.env_name == 'lane_keeping':
