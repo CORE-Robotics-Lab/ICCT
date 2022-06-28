@@ -71,6 +71,7 @@ if __name__ == "__main__":
         args.device = 'cpu'
     
     oracle_model = SAC.load(args.oracle_load_path + "/" + args.oracle_load_file, device=args.device)
+    oracle_model.set_random_seed(args.seed)
     dt_model = DTPolicy(env.action_space, args.max_depth)
     dagger = DAgger(env, oracle_model, dt_model, args.n_rollouts, args.iterations)
     if args.load:
