@@ -18,6 +18,7 @@ Authors: [Rohan Paleja*](https://rohanpaleja.com/), [Yaru Niu*](https://www.yaru
 * [MuJoCo](https://mujoco.org/), [mujoco-py](https://github.com/openai/mujoco-py)
 * [highway-env](https://github.com/eleurent/highway-env)
 * [Flow](https://github.com/flow-project/flow) and [SUMO](https://github.com/eclipse/sumo) ([Installing Flow and SUMO](https://flow.readthedocs.io/en/latest/flow_setup.html#installing-flow-and-sumo))
+* [scikit-learn](https://scikit-learn.org/stable/install.html)
 
 ## Installation of ICCT
   ```
