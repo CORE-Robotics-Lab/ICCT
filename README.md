@@ -66,7 +66,7 @@ In this codebase, we provide all the methods presented in the paper including CD
     * `--num_sub_features`: the number of chosen features for submodels
     * `--argmax_tau`: the temperature of the diff_argmax function
     * `--use_gumbel_softmax`: include to replace the Argmax operation in the paper with Gumbel-Softmax
-  
+
 ## Loading and Testing
 All the MLP and DDT-based methods are evaluated in real time throughout the training process. Here we provide modules to load and test trained models. Please set up arguments and run `sh test.sh` in `icct/runfiles/`. For each DDT-based method, two types of performance can be output: 
   * Fuzzy performance: the performance is evaluated by directly loading the trained model
@@ -84,7 +84,13 @@ During training, the training process can be monitored by tensorboard. Please ru
 * `--non_eval_smooth_window_size`: the sliding window size to smooth the sampled rollout rewards
 
 ## Imitation Learning - DAgger
-We provide an implementation of imitation learning by decision trees using [Dataset Aggregation (DAgger)](http://proceedings.mlr.press/v15/ross11a/ross11a.pdf). Please set up arguments and run `sh train.sh` in `icct/dagger/`. The oracle models are picked from the best of MLP-Max (SAC) from 5 seeds, which can be found in `icct/dagger/oracle_models/`.
+We provide an implementation of imitation learning by decision trees using [Dataset Aggregation (DAgger)](http://proceedings.mlr.press/v15/ross11a/ross11a.pdf). Please set up arguments and run `sh train.sh` in `icct/dagger/`. The oracle models are picked from the best of MLP-Max from five seeds trained by SAC, which can be found in `icct/dagger/oracle_models/`. We have improved the implmentation of DAgger since paper submission and update the results averaged over five seeds as follows.
+| Environment  | Inverted Pendulum | Lunar Lander | Lane Keeping | Single-Lane Ring | Multi-Lane Ring | Figure-8 |
+| :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| Number of Leaves | 32 | 32 | 16 | 16 | 32 | 16 |
+| Best Rollout Performance | $853.1\pm38.2$ | $245.7\pm8.4$ | $393.1\pm14.2$ | $121.9\pm0.03$ | $1260.4\pm4.6$ | $1116.4\pm8.3$ |
+| Evaluation Performance | $776.6\pm54.2$ | $184.7\pm17.3$ | $395.2\pm13.8$ | $121.5\pm0.01$ | $1249.4\pm3.4$  | $1113.8\pm9.5$ |
+| Oracle Performance | $1000.0$ | $301.2$ | $494.1$ | $122.29$ | $1194.5$ | $1126.3$ |
 
 ## Citation
 If you find our paper or repo helpful to your research, please consider citing the paper:
@@ -96,6 +102,7 @@ If you find our paper or repo helpful to your research, please consider citing t
   year={2022}
 }
 ```
+
 ## Acknowledgments
 Some parts of this codebase are inspired from or based on several public repos:
 * [Stable Baselines3](https://github.com/DLR-RM/stable-baselines3)
