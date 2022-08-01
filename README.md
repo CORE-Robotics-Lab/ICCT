@@ -84,7 +84,7 @@ During training, the training process can be monitored by tensorboard. Please ru
 * `--non_eval_smooth_window_size`: the sliding window size to smooth the sampled rollout rewards
 
 ## Imitation Learning - DAgger
-We provide an implementation of imitation learning by decision trees using [Dataset Aggregation (DAgger)](http://proceedings.mlr.press/v15/ross11a/ross11a.pdf). Please set up arguments and run `sh train.sh` in `icct/dagger/`. The oracle models are picked from the best of MLP-Max from five seeds trained by SAC, which can be found in `icct/dagger/oracle_models/`. We have improved the implmentation of DAgger since paper submission and update the results averaged over five seeds as follows.
+We provide an implementation of imitation learning by decision trees using [Dataset Aggregation (DAgger)](http://proceedings.mlr.press/v15/ross11a/ross11a.pdf). Please set up arguments and run `sh train.sh` in `icct/dagger/`. The oracle models are picked from the best of MLP-Max from five seeds trained by SAC, which can be found in `icct/dagger/oracle_models/`. We have improved the implementation of DAgger since paper submission and update the results averaged over five seeds as follows.
 | Environment  | Inverted Pendulum | Lunar Lander | Lane Keeping | Single-Lane Ring | Multi-Lane Ring | Figure-8 |
 | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | Number of Leaves | 32 | 32 | 16 | 16 | 32 | 16 |
