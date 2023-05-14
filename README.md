@@ -1,4 +1,6 @@
 # ICCT Implementation
+[**Talk (RSS 2022)**](https://www.youtube.com/watch?v=V17vQSZP5Zs&t=6798s) | [**Robot Demo**](https://sites.google.com/view/icctree) | [**Paper (RSS 2022)**](https://www.roboticsproceedings.org/rss18/p068.pdf) 
+
 This is the codebase for "[Learning Interpretable, High-Performing Policies for Autonomous Driving](http://www.roboticsproceedings.org/rss18/p068.pdf)", which is published in [Robotics: Science and Systems (RSS), 2022](http://www.roboticsproceedings.org/rss18/index.html).
 
 Authors: [Rohan Paleja*](https://rohanpaleja.com/), [Yaru Niu*](https://www.yaruniu.com/), [Andrew Silva](https://www.andrew-silva.com/), Chace Ritchie, Sugju Choi, [Matthew Gombolay](https://core-robotics.gatech.edu/people/matthew-gombolay/)
