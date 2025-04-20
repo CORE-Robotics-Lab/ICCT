@@ -9,10 +9,10 @@ from icct.dagger.dagger import DAgger
 
 from icct.rl_helpers.sac import SAC
 import highway_env
-# from flow.utils.registry import make_create_env
-# from icct.sumo_envs.accel_ring import ring_accel_params
-# from icct.sumo_envs.accel_ring_multilane import ring_accel_lc_params
-# from icct.sumo_envs.accel_figure8 import fig8_params
+from flow.utils.registry import make_create_env
+from icct.sumo_envs.accel_ring import ring_accel_params
+from icct.sumo_envs.accel_ring_multilane import ring_accel_lc_params
+from icct.sumo_envs.accel_figure8 import fig8_params
 from stable_baselines3.common.utils import set_random_seed
 
 def make_env(env_name, seed):
