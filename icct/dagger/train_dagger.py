@@ -9,10 +9,10 @@ from icct.dagger.dagger import DAgger
 
 from icct.rl_helpers.sac import SAC
 import highway_env
-from flow.utils.registry import make_create_env
-from icct.sumo_envs.accel_ring import ring_accel_params
-from icct.sumo_envs.accel_ring_multilane import ring_accel_lc_params
-from icct.sumo_envs.accel_figure8 import fig8_params
+# from flow.utils.registry import make_create_env
+# from icct.sumo_envs.accel_ring import ring_accel_params
+# from icct.sumo_envs.accel_ring_multilane import ring_accel_lc_params
+# from icct.sumo_envs.accel_figure8 import fig8_params
 from stable_baselines3.common.utils import set_random_seed
 
 def make_env(env_name, seed):
@@ -50,6 +50,9 @@ if __name__ == "__main__":
     parser.add_argument('--max_depth', help='the maximum depth of the decision tree', type=int, default=5)
     parser.add_argument('--n_rollouts', help='number of rollouts in a training batch', type=int, default=10)
     parser.add_argument('--iterations', help='maximum number of training iterations', type=int, default=80)
+    parser.add_argument('--max_samples', help='the maximum number of samples for each training batch', type=int, default=1000000)
+    parser.add_argument('--q_dagger', help='if use q-dagger', action='store_true', default=False)
+    parser.add_argument('--n_q_samples', help='number of samples along each action dimension for q values', type=int, default=30)
     parser.add_argument('--eval_episodes', help='number of episodes to evaluate the trained decision tree', type=int, default=20)
     parser.add_argument('--oracle_load_path', help='the path of loading the oracle model', type=str, default='saved_mlp_models')
     parser.add_argument('--oracle_load_file', help='which oracle model file to load', type=str, default='best_model')
@@ -73,7 +76,7 @@ if __name__ == "__main__":
     oracle_model = SAC.load(args.oracle_load_path + "/" + args.oracle_load_file, device=args.device)
     oracle_model.set_random_seed(args.seed)
     dt_model = DTPolicy(env.action_space, args.max_depth)
-    dagger = DAgger(env, oracle_model, dt_model, args.n_rollouts, args.iterations)
+    dagger = DAgger(env, oracle_model, dt_model, args.n_rollouts, args.iterations, args.max_samples, args.q_dagger, args.n_q_samples)
     if args.load:
         dagger.load_best_dt(args.load)
     else:
