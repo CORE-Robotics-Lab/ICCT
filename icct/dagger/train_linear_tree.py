@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 import gym
 import numpy as np
 import argparse
-from icct.dagger.linear_dt_policy import DTPolicy
+from icct.dagger.linear_dt_policy import LinearDTPolicy
 from icct.dagger.modified_cart import ModifiedDT
 
 from icct.rl_helpers.sac import SAC
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     oracle_model = SAC.load(args.oracle_load_path + "/" + args.oracle_load_file, device=args.device)
     oracle_model.set_random_seed(args.seed)
-    dt_model = DTPolicy(env.action_space, args.max_depth)
+    dt_model = LinearDTPolicy(env.action_space, args.max_depth)
     modified_dt = ModifiedDT(env, oracle_model, dt_model, args.n_rollouts, args.iterations)
     if args.load:
         modified_dt.load_best_dt(args.load)

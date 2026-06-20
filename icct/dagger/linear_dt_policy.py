@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from lineartree import LinearTreeRegressor
 
-class DTPolicy:
+class LinearDTPolicy:
     def __init__(self, action_space, max_depth):
         self.action_space = action_space
         self.max_depth = max_depth
@@ -29,6 +29,6 @@ class DTPolicy:
         return low + (0.5 * (scaled_action + 1.0) * (high - low))
 
     def clone(self):
-        clone = DTPolicy(self.action_space, self.max_depth)
+        clone = LinearDTPolicy(self.action_space, self.max_depth)
         clone.tree = self.tree
         return clone
