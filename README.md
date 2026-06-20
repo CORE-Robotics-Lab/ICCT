@@ -1,8 +1,8 @@
 # ICCT Implementation
 
-This is the codebase for "[Learning Interpretable, High-Performing Policies for Autonomous Driving](http://www.roboticsproceedings.org/rss18/p068.pdf)", published at [Robotics: Science and Systems (RSS), 2022](http://www.roboticsproceedings.org/rss18/index.html).
+This is the codebase for "[Interpretable Reinforcement Learning for Robotics and Continuous Control](https://arxiv.org/abs/2311.10041)"
 
-Authors: [Rohan Paleja*](https://rohanpaleja.com/), [Yaru Niu*](https://www.yaruniu.com/), [Andrew Silva](https://www.andrew-silva.com/), Chace Ritchie, Sugju Choi, [Matthew Gombolay](https://core-robotics.gatech.edu/people/matthew-gombolay/)
+Authors: [Rohan Paleja*](https://rohanpaleja.com/),  Letian Chen*, [Yaru Niu*](https://www.yaruniu.com/), [Andrew Silva](https://www.andrew-silva.com/), Zhaoxin Li, Songan Zhang, Chace Ritchie, Sugju Choi, Kimberlee Chestnut Chang, Hongtei Eric Tseng, Yan Wang, Subramanya Nageshrao, [Matthew Gombolay](https://core-robotics.gatech.edu/people/matthew-gombolay/)
 
 \* indicates co-first authors.
 
