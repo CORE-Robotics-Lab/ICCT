@@ -80,11 +80,11 @@ if __name__ == '__main__':
     print(f"  {rewards.mean():.4f}")
     print(f"  {rewards.std():.4f}")
 
-    if not args.nn:
-        crisp_model = convert_to_crisp(model)
+    if not args.nn and hasattr(model.actor, 'ddt'):
+        model.actor.ddt = convert_to_crisp(model.actor.ddt, training_data=None)
         print(f"crisp results:")
         print()
-        c_rewards = evaluate(crisp_model, env, args.num_episodes)
+        c_rewards = evaluate(model, env, args.num_episodes)
         print(f"  {c_rewards.mean():.4f}")
         print(f"  {c_rewards.std():.4f}")
 
