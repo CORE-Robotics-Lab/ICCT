@@ -1,8 +1,8 @@
 # ICCT Implementation
 
-This is the codebase for "[Learning Interpretable, High-Performing Policies for Autonomous Driving](http://www.roboticsproceedings.org/rss18/p068.pdf)", published at [Robotics: Science and Systems (RSS), 2022](http://www.roboticsproceedings.org/rss18/index.html).
+This is the codebase for "[Interpretable Reinforcement Learning for Robotics and Continuous Control](https://arxiv.org/abs/2311.10041)"
 
-Authors: [Rohan Paleja*](https://rohanpaleja.com/), [Yaru Niu*](https://www.yaruniu.com/), [Andrew Silva](https://www.andrew-silva.com/), Chace Ritchie, Sugju Choi, [Matthew Gombolay](https://core-robotics.gatech.edu/people/matthew-gombolay/)
+Authors: [Rohan Paleja*](https://rohanpaleja.com/),  Letian Chen*, [Yaru Niu*](https://www.yaruniu.com/), [Andrew Silva](https://www.andrew-silva.com/), Zhaoxin Li, Songan Zhang, Chace Ritchie, Sugju Choi, Kimberlee Chestnut Chang, Hongtei Eric Tseng, Yan Wang, Subramanya Nageshrao, [Matthew Gombolay](https://core-robotics.gatech.edu/people/matthew-gombolay/)
 
 \* indicates co-first authors.
 
@@ -332,11 +332,14 @@ VIPER-Big always fits a depth-6 decision tree. VIPER-Small and DAgger use a dept
 ## Citation
 
 ```bibtex
-@inproceedings{icct-rss-22,
-  title={Learning Interpretable, High-Performing Policies for Autonomous Driving},
-  author={Paleja, Rohan and Niu, Yaru and Silva, Andrew and Ritchie, Chace and Choi, Sugju and Gombolay, Matthew},
-  booktitle={Robotics: Science and Systems (RSS)},
-  year={2022}
+@misc{paleja2023interpretablereinforcementlearningrobotics,
+      title={Interpretable Reinforcement Learning for Robotics and Continuous Control}, 
+      author={Rohan Paleja and Letian Chen and Yaru Niu and Andrew Silva and Zhaoxin Li and Songan Zhang and Chace Ritchie and Sugju Choi and Kimberlee Chestnut Chang and Hongtei Eric Tseng and Yan Wang and Subramanya Nageshrao and Matthew Gombolay},
+      year={2023},
+      eprint={2311.10041},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2311.10041}, 
 }
 ```
 
